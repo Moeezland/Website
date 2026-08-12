@@ -1,0 +1,300 @@
+<footer class="footer">
+
+    <div class="footer-top-line"></div>
+
+    <div class="footer-container">
+
+        <!-- Column 1 -->
+
+        <div class="footer-column">
+
+            <h3>About</h3>
+
+            <a href="about.html">About Moeezland</a>
+            <a href="gov.html">Government</a>
+            <a href="ministries.html">Ministries</a>
+            <a href="symbols.html">National Symbols</a>
+
+        </div>
+
+        <!-- Column 2 -->
+
+        <div class="footer-column">
+
+            <h3>Help & Support</h3>
+
+            <a href="mailto:info@moeezland.com">Contact Us</a>
+            <a href="under_construction.html">Sitemap</a>
+            <a href="under_construction.html">Tawasul (Send us a message)</a>
+
+        </div>
+
+        <!-- Column 3 -->
+
+        <div class="footer-column">
+
+            <h3>About this Website</h3>
+
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="copyright.html">Copyright</a>
+
+        </div>
+
+        <!-- Column 4 -->
+
+        <div class="footer-column">
+
+            <h3>References</h3>
+
+            <a href="legislation.html">Legislation</a>
+            <a href="https://news.moeezland.com">News</a>
+            <a href="elections.html">Elections</a>
+
+        </div>
+
+        <!-- Logos -->
+
+        <div class="footer-logos">
+
+<a href="under_construction.html" class="footer-logo-card">
+
+    <img src="assets/images/telecom.png">
+
+    <span>Powered by: MDAIA</span>
+
+</a>
+
+<a href="under_construction.html" class="footer-logo-card">
+
+    <img src="assets/images/interior.png">
+
+    <span>Ministry of Interior</span>
+
+</a>
+
+<a href="https://legislation.moeezland.com" class="footer-logo-card">
+
+    <img src="assets/images/moeezlegislation.png">
+
+    <span>Moeezland Legislation</span>
+
+</a>
+
+        </div>
+
+    </div>
+
+<div class="footer-newsletter">
+
+    <div class="newsletter-content">
+
+        <div class="newsletter-text">
+
+<div class="newsletter-title">
+
+    <img src="assets/images/newsletter.png"
+         alt="Government of Moeezland">
+
+    <h3>Government Newsletter</h3>
+
+</div>
+
+            <p>
+                Receive official government announcements, legislation updates,
+                election notices and public service information directly from
+                the Constitutional Emirate of Moeezland.
+            </p>
+
+        </div>
+
+        <form id="newsletterForm" class="newsletter-form">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required>
+
+            <button type="submit" id="newsletterButton">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <div class="footer-bottom">
+
+        <span>
+
+            © 2019–2026 Constitutional Emirate of Moeezland.
+            All rights reserved.
+
+        </span>
+
+        <div class="footer-social">
+
+            <a href="https://discord.gg/3h8fyH4NuP">
+                <img src="assets/images/discord.png">
+            </a>
+
+            <a href="https://www.youtube.com/@moeezland">
+                <img src="assets/images/youtube.png">
+            </a>
+
+            <a href="https://micronations.wiki/wiki/Moeezland">
+                <img src="assets/images/microwiki.png">
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("O3EKdOrh_6d_s_bk3");
+</script>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+
+getFirestore,
+
+collection,
+
+query,
+
+getDocs,
+
+where,
+
+addDoc,
+
+serverTimestamp
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAjLbEjTs-8KWwrdMAl09-AqcjPMFMmBjo",
+
+authDomain: "moeezland-news.firebaseapp.com",
+
+projectId: "moeezland-news",
+
+storageBucket: "moeezland-news.firebasestorage.app",
+
+messagingSenderId: "839489125403",
+
+appId: "1:839489125403:web:9bbd4c4132f253237b0cbe"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const newsletterForm = document.getElementById("newsletterForm");
+
+newsletterForm.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const input = document.getElementById("newsletterEmail");
+
+    const button = document.getElementById("newsletterButton");
+
+    const email = input.value.trim().toLowerCase();
+
+    if(!email.includes("@")){
+        alert("Please enter a valid email.");
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Subscribing...";
+
+    try{
+
+        const existing = query(
+            collection(db,"subscribers"),
+            where("email","==",email)
+        );
+
+        const snapshot = await getDocs(existing);
+
+        if(!snapshot.empty){
+
+            alert("You are already subscribed.");
+
+            button.disabled = false;
+            button.textContent = "Subscribe";
+
+            return;
+
+        }
+
+        await addDoc(collection(db,"subscribers"),{
+
+            email:email,
+
+            createdAt:serverTimestamp()
+
+        });
+
+        await emailjs.send(
+
+            "service_t833ehf",
+
+            "template_fsqtzbk",
+
+            {
+
+                to_email:email,
+
+                message:"🚀 Welcome to the Government Newsletter of the Constitutional Emirate of Moeezland."
+
+            },
+
+            "O3EKdOrh_6d_s_bk3"
+
+        );
+
+        input.value="";
+
+        button.textContent="Subscribed ✓";
+
+        setTimeout(()=>{
+
+            button.disabled=false;
+
+            button.textContent="Subscribe";
+
+        },3000);
+
+    }
+
+catch(error){
+
+    console.error(error);
+
+    alert(error);
+
+    button.disabled = false;
+
+    button.textContent = "Subscribe";
+
+}
+
+});
+
+</script>

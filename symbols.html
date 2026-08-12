@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moeezland eGov | Symbols</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- Breadcrumb -->
+
+<div class="breadcrumb-wrapper">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="gov.html">Government</a>
+
+        <span>›</span>
+
+        <span class="current">Symbols</span>
+
+    </div>
+
+</div>
+
+<section class="services-page">
+
+    <div class="services-layout">
+
+        <!-- Main Content -->
+
+        <div class="services-content">
+
+            <h1>Symbols</h1>
+
+            <p class="intro">
+                The national symbols of Moeezland reflect its identity as a
+                secular, coastal Emirate — a heritage built on the sea, trade,
+                and the authority of the Crown, expressed through the national
+                flag and the coat of arms.
+            </p>
+
+            <section>
+
+                <h2>The Flag</h2>
+
+                <img src="flag.svg" alt="Flag of Moeezland"
+                    style="max-width:420px;width:100%;border:1.5px solid var(--primary);box-shadow:var(--shadow);margin-bottom:25px;">
+
+                <p>
+                    The flag of Moeezland features a white band on the hoist
+                    side, separated from the main blue field by a serrated
+                    line of five white triangles. The design closely follows
+                    the traditional Gulf flag format, distinguished by its use
+                    of blue in place of red.
+                </p>
+
+                <p>
+                    The five triangles echo the five points of the crown
+                    featured in the national coat of arms, visually linking
+                    the flag to the wider set of national symbols, while also
+                    evoking the coastline and waves along Moeezland's shores.
+                    As Moeezland is a secular state, the triangles carry no
+                    religious meaning.
+                </p>
+
+                <p>
+                    The blue field represents the sea, stability, and
+                    loyalty, reflecting Moeezland's maritime character, while
+                    the white band stands for peace.
+                </p>
+
+            </section>
+
+            <section>
+
+                <h2>The Emblem</h2>
+
+                <img src="assets/images/gov.png" alt="Coat of Arms of Moeezland"
+                    style="max-width:340px;width:100%;box-shadow:var(--shadow);margin-bottom:25px;">
+
+                <p>
+                    The coat of arms of Moeezland is topped by a gold crown,
+                    signifying the sovereignty of the Emir as Head of State,
+                    and framed by flowing blue-and-white mantling that
+                    reflects the national colors.
+                </p>
+
+                <p>
+                    The shield itself is divided by a jagged, wave-like
+                    partition line, representing the coastline and the sea
+                    that shapes Moeezland's history. Its upper field is white,
+                    symbolizing peace, while the lower fields are blue,
+                    representing the surrounding waters.
+                </p>
+
+                <p>
+                    At the center of the shield, a traditional dhow sailing
+                    ship and a palm tree stand side by side. The dhow
+                    represents Moeezland's seafaring heritage and its history
+                    of maritime trade, while the palm tree symbolizes
+                    resilience, growth, and the sustenance of the land. Together,
+                    they capture a nation shaped equally by land and sea.
+                </p>
+
+            </section>
+
+            <!-- Page Feedback -->
+
+            <div class="feedback-card" id="feedbackCard">
+
+                <div class="feedback-content">
+
+                    <h3>Was this page helpful?</h3>
+
+                    <p>Help us improve Moeezland eGov services.</p>
+
+                </div>
+
+                <div class="feedback-buttons">
+
+                    <button class="feedback-btn" id="thumbUp">👍</button>
+
+                    <button class="feedback-btn" id="thumbDown">👎</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<div id="footer"></div>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<script>
+kofiWidgetOverlay.draw('moeezland', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#fcbf47',
+    'floating-chat.donateButton.text-color': '#323842'
+});
+</script>
+
+<script>
+
+/* ==========================
+   PAGE FEEDBACK
+========================== */
+
+const card = document.getElementById("feedbackCard");
+const up = document.getElementById("thumbUp");
+const down = document.getElementById("thumbDown");
+
+function submitFeedback(){
+
+    card.classList.add("feedback-success");
+
+    card.innerHTML = `
+
+        <div class="feedback-content">
+
+            <h3>Thank you for your feedback!</h3>
+
+            <p>
+                We appreciate your feedback. Your response helps us
+                improve the quality and accessibility of Moeezland
+                eGov services.
+            </p>
+
+        </div>
+
+        <div class="feedback-check">
+            ✓
+        </div>
+
+    `;
+}
+
+up.addEventListener("click", submitFeedback);
+down.addEventListener("click", submitFeedback);
+
+</script>
+
+<script src="js/component-loader.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

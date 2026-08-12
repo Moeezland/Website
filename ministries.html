@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moeezland eGov | Ministries</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- Breadcrumb -->
+
+<div class="breadcrumb-wrapper">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="gov.html">Government</a>
+
+        <span>›</span>
+
+        <span class="current">Ministries</span>
+
+    </div>
+
+</div>
+
+<section class="services-page">
+
+    <div class="services-layout">
+
+        <!-- Main Content -->
+
+        <div class="services-content">
+
+            <h1>We're still working on this page.</h1>
+
+            <p class="intro">
+The Government of Moeezland is currently working on this page. We apologise for any inconvenience and appreciate your patience.
+            </p>
+            </section>
+
+<!-- Footer -->
+
+<div id="footer"></div>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<script>
+kofiWidgetOverlay.draw('moeezland', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#fcbf47',
+    'floating-chat.donateButton.text-color': '#323842'
+});
+</script>
+
+<script>
+
+/* ==========================
+   PAGE FEEDBACK
+========================== */
+
+const card = document.getElementById("feedbackCard");
+const up = document.getElementById("thumbUp");
+const down = document.getElementById("thumbDown");
+
+function submitFeedback(){
+
+    card.classList.add("feedback-success");
+
+    card.innerHTML = `
+
+        <div class="feedback-content">
+
+            <h3>Thank you for your feedback!</h3>
+
+            <p>
+                We appreciate your feedback. Your response helps us
+                improve the quality and accessibility of Moeezland
+                eGov services.
+            </p>
+
+        </div>
+
+        <div class="feedback-check">
+            ✓
+        </div>
+
+    `;
+}
+
+up.addEventListener("click", submitFeedback);
+down.addEventListener("click", submitFeedback);
+
+</script>
+
+<script src="js/component-loader.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

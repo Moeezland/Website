@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moeezland eGov | Commerce</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- Breadcrumb -->
+
+<div class="breadcrumb-wrapper">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="services.html">Services</a>
+
+        <span>›</span>
+
+        <span class="current">Commerce</span>
+
+    </div>
+
+</div>
+
+<section class="services-page">
+
+    <div class="services-layout">
+
+        <!-- Sidebar -->
+
+        <aside class="services-sidebar">
+
+<a href="civilid.html" class="sidebar-btn">
+    <img src="assets/images/civilid.png">
+    <span>Civil ID</span>
+</a>
+
+            <a href="passport.html" class="sidebar-btn">
+                <img src="assets/images/passport.png">
+                <span>Passport</span>
+            </a>
+
+            <a href="commerce.html" class="sidebar-btn">
+                <img src="assets/images/commerce.png">
+                <span>Commerce</span>
+            </a>
+
+            <a href="legislation.html" class="sidebar-btn">
+                <img src="assets/images/legislation.png">
+                <span>Legislation</span>
+            </a>
+
+            <a href="elections.html" class="sidebar-btn">
+                <img src="assets/images/vote.png">
+                <span>Elections</span>
+            </a>
+
+            <a href="mofa.html" class="sidebar-btn">
+                <img src="assets/images/mofa.png">
+                <span>Foreign Affairs</span>
+            </a>
+
+            <a href="civil_registration.html" class="sidebar-btn">
+                <img src="assets/images/registration.png">
+                <span>Civil Affairs</span>
+            </a>
+
+            <a href="travel.html" class="sidebar-btn">
+                <img src="assets/images/visa.png">
+                <span>Visas</span>
+            </a>
+
+            <a href="traffic.html" class="sidebar-btn">
+                <img src="assets/images/traffic.png">
+                <span>Traffic</span>
+            </a>
+
+            <a href="tax.html" class="sidebar-btn">
+                <img src="assets/images/tax.png">
+                <span>Taxation</span>
+            </a>
+
+<a href="mailto:info@moeezland.com" class="contact-box">
+
+    <img src="assets/images/help.png"
+         alt="Help"
+         class="contact-icon">
+
+    <h3>Need more information?</h3>
+
+    <p>
+        If you have any questions regarding government services,
+        don't hesitate to contact us by email.
+    </p>
+
+    <span>Email us →</span>
+
+</a>
+
+        </aside>
+
+        <!-- Main Content -->
+
+        <main class="services-content">
+
+<h1>Commerce</h1>
+
+<p class="intro">
+
+The Commerce service provides citizens and businesses with access to the Government's official commercial registration and business administration services. Through this service, eligible applicants may establish business entities, apply for commercial licences, register businesses, obtain Commercial Registration Numbers, and receive Certificates of Incorporation where applicable.
+
+</p>
+
+<p class="intro">
+
+The service also allows users to access official business records, manage applications, and complete required procedures electronically where permitted by law.
+
+</p>
+
+<p class="intro">
+
+Certain business entities, including Sole Proprietorships, may be established entirely online through the e-Moeezland portal, while applications for Partnerships, Limited Liability Companies, and Corporations are administered by the Ministry of Commerce in accordance with the Commerce Code and other applicable legislation.
+
+</p>
+
+<p class="intro">
+
+To access this service, please sign in to your e-Moeezland account below. After signing in, you will be able to access this service.
+
+</p>
+
+<a href="https://portal.moeezland.com" class="signin-btn">
+
+    <img src="assets/images/e-moeezland.png" alt="e-Moeezland">
+
+    <span>Sign in with e-Moeezland</span>
+
+</a>
+
+<div class="feedback-card" id="feedbackCard">
+
+    <div class="feedback-content">
+
+        <h3>Did you find this page helpful?</h3>
+
+        <p>
+            Help us improve Moeezland eGov by sharing your feedback.
+            You can also
+            <a href="mailto:feedback@moeezland.com">contact us</a>.
+        </p>
+
+    </div>
+
+    <div class="feedback-buttons">
+
+        <button id="thumbUp" class="feedback-btn">
+
+            👍
+
+        </button>
+
+        <button id="thumbDown" class="feedback-btn">
+
+            👎
+
+        </button>
+
+    </div>
+
+</div>
+
+</main>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<div id="footer"></div>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<script>
+kofiWidgetOverlay.draw('moeezland', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#fcbf47',
+    'floating-chat.donateButton.text-color': '#323842'
+});
+</script>
+
+<script>
+
+/* ==========================
+   PAGE FEEDBACK
+========================== */
+
+const card = document.getElementById("feedbackCard");
+const up = document.getElementById("thumbUp");
+const down = document.getElementById("thumbDown");
+
+function submitFeedback(){
+
+    card.classList.add("feedback-success");
+
+    card.innerHTML = `
+
+        <div class="feedback-content">
+
+            <h3>Thank you for your feedback!</h3>
+
+            <p>
+                We appreciate your feedback. Your response helps us
+                improve the quality and accessibility of Moeezland
+                eGov services.
+            </p>
+
+        </div>
+
+        <div class="feedback-check">
+            ✓
+        </div>
+
+    `;
+}
+
+up.addEventListener("click", submitFeedback);
+down.addEventListener("click", submitFeedback);
+
+</script>
+
+<script src="js/component-loader.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

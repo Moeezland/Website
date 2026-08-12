@@ -1,0 +1,149 @@
+<div class="gov-banner" role="region" aria-label="Official government website banner">
+  <div class="gov-banner__container">
+    <div class="gov-banner__header">
+      <span class="gov-banner__icon">
+        <img src="flag.svg" alt="Official Moeezland Flag" width="37" height="37" aria-hidden="true">
+      </span>
+      <span class="gov-banner__text">
+        An official website of the Moeezland
+      </span>
+<button class="gov-banner__toggle" 
+        aria-expanded="false" 
+        aria-controls="gov-banner-panel">
+  Here's how you know
+  <svg class="gov-banner__toggle-icon" viewBox="0 0 10 10" aria-hidden="true">
+    <polygon points="0,3 5,8 10,3" fill="currentColor" />
+  </svg>
+</button>
+    </div>
+
+    <div id="gov-banner-panel" class="gov-banner__panel">
+      <div class="gov-banner__panel-content">
+        <div class="gov-banner__panel-item">
+          <strong>Official websites use .moeezland.com</strong>
+          <span>A <strong>.moeezland.com</strong> domain belongs to an official government organization in the Constitutional Emirate of Moeezland.</span>
+        </div>
+
+<div class="gov-banner__panel-item">
+  <strong>Secure .moeezland.com websites use HTTPS</strong>
+  <span>A <strong>lock</strong> (🔒) or <strong>https://</strong> means you've safely connected to the .moeezland.com website.</span>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Header -->
+
+    <header>
+
+        <div class="container nav">
+
+<a href="index.html" class="logo">
+
+    <img src="../assets/images/logo.png" alt="Moeezland">
+
+    <div>
+        <h2>Moeezland eGov</h2>
+        <span>A government portal</span>
+    </div>
+
+</a>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+<nav>
+
+    <!-- Services -->
+    <a href="services.html">
+        Services
+    </a>
+
+    <!-- Government -->
+<div class="dropdown">
+
+    <button class="dropdown-toggle" type="button">
+
+        Government
+
+        <span>▾</span>
+
+    </button>
+
+    <div class="dropdown-menu">
+
+        <a href="structure.html">Structure</a>
+
+        <a href="ministries.html">Ministries</a>
+
+        <a href="symbols.html">National Symbols</a>
+
+    </div>
+
+</div>
+
+    <!-- About -->
+<div class="dropdown">
+
+    <button class="dropdown-toggle" type="button">
+
+        About
+
+        <span>▾</span>
+
+    </button>
+
+    <div class="dropdown-menu">
+
+        <a href="about.html">The Micronation</a>
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+
+        <a href="terms-of-use.html">Terms of Use</a>
+
+        <a href="copyright.html">Copyright</a>
+
+    </div>
+
+</div>
+
+    <a href="https://elections.moeezland.com"
+       target="_blank"
+       rel="noopener">
+        Elections <span class="external-link">↗</span>
+    </a>
+
+    <a href="https://legislation.moeezland.com"
+       target="_blank"
+       rel="noopener">
+        Legislation <span class="external-link">↗</span>
+    </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+<script>
+const toggleBtn = document.querySelector('.gov-banner__toggle');
+const panel = document.getElementById('gov-banner-panel');
+
+toggleBtn.addEventListener('click', () => {
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+
+    toggleBtn.setAttribute('aria-expanded', !expanded);
+
+    if (expanded) {
+        panel.classList.remove('open');
+    } else {
+        panel.classList.add('open');
+    }
+});
+</script>
