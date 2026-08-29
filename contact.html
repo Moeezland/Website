@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moeezland eGov | Contact us</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Government Header -->
+    <div id="site-header"></div>
+
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-wrapper">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">Home</a>
+
+            <span>›</span>
+
+            <span class="current">Contact Us</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Contact Page -->
+    <section class="services-page">
+
+        <div class="services-layout">
+
+            <!-- Main Content -->
+            <main class="services-content">
+
+                <h1>Contact Us</h1>
+
+                <p class="intro">
+                    Use this form to contact the Government of the Constitutional
+                    Emirate of Moeezland. Your message will be reviewed by the
+                    relevant government officials.
+                </p>
+
+
+                <!-- Contact Form -->
+                <form id="contactForm">
+
+
+                    <!-- Personal Information -->
+                    <section>
+
+                        <h2>Your Information</h2>
+
+                        <div class="contact-form-group">
+
+                            <label for="name">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="email">
+                                Email Address <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                            >
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Message Information -->
+                    <section>
+
+                        <h2>Your Message</h2>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="department">
+                                Department / Area
+                            </label>
+
+                            <select id="department" name="department">
+
+                                <option value="">
+                                    Select an area
+                                </option>
+
+                                <option value="General Government">
+                                    General Government
+                                </option>
+
+                                <option value="Foreign Affairs">
+                                    Foreign Affairs
+                                </option>
+
+                                <option value="Interior">
+                                    Interior
+                                </option>
+
+                                <option value="Justice">
+                                    Justice
+                                </option>
+
+                                <option value="Finance">
+                                    Finance
+                                </option>
+
+                                <option value="Education">
+                                    Education
+                                </option>
+
+                                <option value="Technology">
+                                    Technology
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="subject">
+                                Subject <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="Enter the subject of your message"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="message">
+                                Message <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="8"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Submission Notice -->
+                    <div class="contact-notice">
+
+                        <strong>Before you submit</strong>
+
+                        <p>
+                            Please ensure that the information provided is
+                            accurate and that your message contains all
+                            relevant details required for the Government to
+                            review your request.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Confirmation -->
+                    <div class="contact-confirmation">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="confirmation"
+                                name="confirmation"
+                                required
+                            >
+
+                            <span>
+                                I confirm that the information provided in
+                                this form is accurate to the best of my
+                                knowledge.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="contact-submit"
+                    >
+                        Submit Message
+                    </button>
+
+
+                </form>
+
+            </main>
+
+        </div>
+
+    </section>
+
+
+    <!-- Government Footer -->
+    <div id="footer"></div>
+
+
+    <!-- Scripts -->
+
+<script src="js/component-loader.js"></script>
+<script src="js/script.js"></script>
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+    import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyC3c8P90yAA4jdA_UEXqzWDYQPq2K_tOoo",
+        authDomain: "moeezland-forms.firebaseapp.com",
+        projectId: "moeezland-forms",
+        storageBucket: "moeezland-forms.firebasestorage.app",
+        messagingSenderId: "607142052547",
+        appId: "1:607142052547:web:0b8e5efc29bc7981265876"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1543124110152962049/y5GX5HH04hDvPd--1SRKpC10z6k8apB-3o7lHaS536cJ6h6079xpscWjucyMgibqF4Y8";
+
+    const contactForm = document.getElementById("contactForm");
+
+
+    contactForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const department = document.getElementById("department").value;
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+
+try {
+
+    // Save to Firestore
+    const docRef = await addDoc(
+        collection(db, "contact_submissions"),
+        {
+            name,
+            email,
+            phone,
+            department,
+            subject,
+            message,
+            submittedAt: serverTimestamp()
+        }
+    );
+
+    // Send notification to Discord
+    await fetch(DISCORD_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            username: "Moeezland Government",
+            embeds: [{
+                title: "📨 New Contact Us Submission",
+                color: 11523746,
+                fields: [
+                    {
+                        name: "👤 Full Name",
+                        value: name || "Not provided",
+                        inline: true
+                    },
+                    {
+                        name: "📧 Email",
+                        value: email || "Not provided",
+                        inline: true
+                    },
+                    {
+                        name: "📱 Phone",
+                        value: phone || "Not provided",
+                        inline: true
+                    },
+                    {
+                        name: "🏛️ Department / Area",
+                        value: department || "Not specified",
+                        inline: true
+                    },
+                    {
+                        name: "📌 Subject",
+                        value: subject || "No subject",
+                        inline: false
+                    },
+                    {
+                        name: "💬 Message",
+                        value: message || "No message",
+                        inline: false
+                    },
+                    {
+                        name: "🆔 Submission ID",
+                        value: docRef.id,
+                        inline: false
+                    }
+                ],
+                footer: {
+                    text: "Constitutional Emirate of Moeezland • Contact Us"
+                },
+                timestamp: new Date().toISOString()
+            }]
+        })
+    });
+
+    contactForm.reset();
+
+    alert("Your message has been submitted successfully.");
+
+} catch (error) {
+
+            console.error("Error submitting contact form:", error);
+
+            alert("There was a problem submitting your message. Please try again.");
+
+        }
+
+    });
+
+</script>
+
+</body>
+
+</html>
